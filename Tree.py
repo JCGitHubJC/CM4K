@@ -19,7 +19,7 @@ def tree(w, t):
 	t.fd(w/2)
 	t.rt(90)
 	t.fd(w/10)
-	t.color("green")
+	t.color("orange")
 	t.lt(90)
 	t.fill(True)
 	for i in range (0, 360):
