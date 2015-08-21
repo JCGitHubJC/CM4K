@@ -1,0 +1,131 @@
+import turtle
+wd = turtle.Screen()
+oT = turtle.Turtle()
+oT.hideturtle()
+def fireworks(pos, color, size, turtle):
+	turtle.shapesize(0)
+	turtle.goto(pos)
+	turtle.color(color)
+	for i in range(0, 36):
+		turtle.speed(0)
+		turtle.fd(size)
+		turtle.lt(250)
+def pyramid (level,size, turtle):
+	while (level > 0):
+		upperleftx = (-size/2*level)
+		upperlefty = (size/2*level)
+		bottomrightx =(size/2*level)
+		bottomrighty =(-size/2*level)
+		levelcolor = level%6
+		if (levelcolor == 5):
+			color = (1,0,1)
+		elif (levelcolor == 4):
+			color = (0,0,1)
+		elif (levelcolor == 3):
+			color = (0,1,0)
+		elif (levelcolor == 1):
+			color = (1,0.5,0)
+		elif (levelcolor == 2):
+			color = (1,1,0)
+		else:
+			color = (1,0,0)
+		x = upperleftx
+		y = upperlefty
+		while(x < bottomrightx):
+			fireworks((x,y), color, size, turtle)
+			x = x+size
+		while(y > bottomrighty):
+			fireworks((x,y), color, size, turtle)
+			y = y-size
+		while(x > upperleftx):
+			fireworks((x,y), color, size, turtle)
+			x = x-size
+		while(y < upperlefty):
+			fireworks((x,y), color, size, turtle)
+			y = y+size
+		level = level -1
+	fireworks((0,0), "red",size,turtle)
+wd.bgcolor("black")
+'''
+t = turtle.Turtle()
+a = turtle.Turtle()
+b = turtle.Turtle()
+c = turtle.Turtle()
+d = turtle.Turtle()
+e = turtle.Turtle()
+f = turtle.Turtle()
+g = turtle.Turtle()
+h = turtle.Turtle()
+i = turtle.Turtle()
+j = turtle.Turtle()
+k = turtle.Turtle()
+l = turtle.Turtle()
+m = turtle.Turtle()
+n = turtle.Turtle()
+o = turtle.Turtle()
+p = turtle.Turtle()
+q = turtle.Turtle()
+r = turtle.Turtle()
+s = turtle.Turtle()
+u = turtle.Turtle()
+v = turtle.Turtle()
+w = turtle.Turtle()
+x = turtle.Turtle()
+y = turtle.Turtle()
+z = turtle.Turtle()
+aa = turtle.Turtle()
+ab = turtle.Turtle()
+ac = turtle.Turtle()
+ad = turtle.Turtle()
+ae = turtle.Turtle()
+af = turtle.Turtle()
+ag = turtle.Turtle()
+ah = turtle.Turtle()
+ai = turtle.Turtle()
+aj = turtle.Turtle()
+ak = turtle.Turtle()
+al = turtle.Turtle()
+am = turtle.Turtle()
+an = turtle.Turtle()
+ao = turtle.Turtle()
+ap = turtle.Turtle()
+aq = turtle.Turtle()
+ar = turtle.Turtle()
+at = turtle.Turtle()
+au = turtle.Turtle()
+av = turtle.Turtle()
+aw = turtle.Turtle()
+ax = turtle.Turtle()
+ay = turtle.Turtle()
+az = turtle.Turtle()
+fireworks((0, 0), "red", 100, t)
+fireworks((50, 50), "orange", 100, a)
+fireworks((50, -50), "orange", 100, b)
+fireworks((-50, -50), "orange", 100, c)
+fireworks((-50, 50), "orange", 100, d)
+fireworks((0, 100), "yellow", 100, e)
+fireworks((100, 100), "yellow", 100, f)
+fireworks((100, 0), "yellow", 100, g)
+fireworks((100, -100), "yellow", 100, h)
+fireworks((0, -100), "yellow", 100, i)
+fireworks((-100, -100), "yellow", 100, j)
+fireworks((-100, 0), "yellow", 100, k)
+fireworks((-100, 100), "yellow", 100, l)
+fireworks((-50, 150), "green", 100, m)
+fireworks((50, 150), "green", 100, n)
+fireworks((150, 150), "green", 100, o)
+fireworks((150, 50), "green", 100, p)
+fireworks((150, -50), "green", 100, q)
+fireworks((150, -150), "green", 100, r)
+fireworks((50, -150), "green", 100, s)
+fireworks((-50, -150), "green", 100, u)
+fireworks((-150, -150), "green", 100, v)
+fireworks((-150, -50), "green", 100, w)
+fireworks((-150, 50), "green", 100, x)
+fireworks((-150, 150), "green", 100, y)
+fireworks((0, 200), "blue", 100, z)
+'''
+wd.tracer(0,0)
+pyramid(35,20, oT)	
+wd.tracer(1,10)
+wd.exitonclick()
